@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Jalnan";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Jalnan.ttf") format("ttf");
+}
+
+body {
+  font-family: "Jalnan";
+}

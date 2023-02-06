@@ -1,8 +1,14 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+
+const NUMS = 21000;
+
 export default function Home() {
+  const router = useRouter();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -15,7 +21,7 @@ export default function Home() {
           1,
           1000
         );
-        camera.position.z = 1;
+        camera.position.z = 0;
         camera.rotation.x = Math.PI / 2;
 
         let renderer = new THREE.WebGLRenderer({
@@ -27,17 +33,12 @@ export default function Home() {
 
         let starGeo = new THREE.BufferGeometry();
 
-        const positions = new Float32Array(6000 * 3);
-        const velocities = new Float32Array(5000 * 3);
+        const positions = new Float32Array(NUMS);
+        const velocities = new Float32Array(NUMS);
 
-        for (let i = 0; i < 5000 * 3; i += 3) {
-          positions[i] = (Math.random() - 0.5) * 3;
-          positions[i + 1] = (Math.random() - 0.5) * 3;
-          positions[i + 2] = (Math.random() - 0.5) * 3;
-
+        for (let i = 0; i < NUMS; i++) {
+          positions[i] = (Math.random() - 0.5) * 100;
           velocities[i] = 0;
-          velocities[i + 1] = 0;
-          velocities[i + 2] = 0;
         }
 
         starGeo.setAttribute(
@@ -52,31 +53,32 @@ export default function Home() {
         let sprite = new THREE.TextureLoader().load("star.png");
         let starMaterial = new THREE.PointsMaterial({
           color: 0xaaaaaa,
-          size: 0.1,
+          size: 0.7,
           map: sprite,
         });
 
         let stars = new THREE.Points(starGeo, starMaterial);
-        scene.add(stars);
 
         let animate = () => {
-          requestAnimationFrame(animate);
-          for (let i = 0; i < 5000 * 3; i += 3) {
-            stars.geometry.attributes.position.array[i + 1] -=
-              stars.geometry.attributes.velocity.array[i + 1];
+          for (let i = 0; i < NUMS; i += 2) {
+            stars.geometry.attributes.position.array[i] -=
+              stars.geometry.attributes.velocity.array[i];
+            stars.geometry.attributes.velocity.array[i] += 0.0005;
 
-            stars.geometry.attributes.velocity.array[i + 1] += 0.001;
-
-            if (stars.geometry.attributes.position.array[i + 1] < -200) {
-              stars.geometry.attributes.position.array[i + 1] = 200;
-              stars.geometry.attributes.velocity.array[i + 1] = 0;
+            if (stars.geometry.attributes.position.array[i] < -50) {
+              stars.geometry.attributes.position.array[i] = 50;
+              stars.geometry.attributes.velocity.array[i] = 0;
             }
           }
           stars.geometry.attributes.position.needsUpdate = true;
-          stars.rotation.y += 0.002;
+          stars.rotation.y += 0.001;
+
+          requestAnimationFrame(animate);
+
           renderer.render(scene, camera);
         };
 
+        scene.add(stars);
         animate();
       };
 
@@ -84,9 +86,83 @@ export default function Home() {
     }
   }, [canvasRef]);
 
+  const letters = Array.from("Everything's Gonna Be Alright.");
+
+  const container = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+    }),
+  };
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      x: -20,
+      y: -20,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
-    <>
-      <canvas ref={canvasRef} id="canvas" />
-    </>
+    <div className="flex flex-col h-screen items-center justify-center">
+      <canvas
+        ref={canvasRef}
+        id="canvas"
+        className="absolute top-0 left-0 z-[-1]"
+      />
+      <motion.div
+        style={{ overflow: "hidden", display: "flex" }}
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {letters.map((word, index) => (
+          <motion.span
+            key={index}
+            variants={variants}
+            style={{
+              color: "white",
+              fontSize: 24,
+            }}
+          >
+            {word === " " ? "\u00A0" : word}
+          </motion.span>
+        ))}
+      </motion.div>
+      <motion.div
+        whileHover={{
+          scale: 1.1,
+          transition: { duration: 0.3 },
+        }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <div
+          className="text-white mt-8 border-2 px-5 py-2 border-white rounded-lg cursor-pointer"
+          onClick={() => {
+            router.push("/main");
+          }}
+        >
+          More →
+        </div>
+      </motion.div>
+    </div>
   );
 }
