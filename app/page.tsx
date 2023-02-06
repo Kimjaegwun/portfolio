@@ -1,91 +1,92 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
 
-const inter = Inter({ subsets: ['latin'] })
-
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 export default function Home() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      const init = () => {
+        let scene = new THREE.Scene();
+        let camera = new THREE.PerspectiveCamera(
+          60,
+          window.innerWidth / window.innerHeight,
+          1,
+          1000
+        );
+        camera.position.z = 1;
+        camera.rotation.x = Math.PI / 2;
+
+        let renderer = new THREE.WebGLRenderer({
+          canvas: canvasRef.current as any,
+          antialias: true,
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        let starGeo = new THREE.BufferGeometry();
+
+        const positions = new Float32Array(6000 * 3);
+        const velocities = new Float32Array(5000 * 3);
+
+        for (let i = 0; i < 5000 * 3; i += 3) {
+          positions[i] = (Math.random() - 0.5) * 3;
+          positions[i + 1] = (Math.random() - 0.5) * 3;
+          positions[i + 2] = (Math.random() - 0.5) * 3;
+
+          velocities[i] = 0;
+          velocities[i + 1] = 0;
+          velocities[i + 2] = 0;
+        }
+
+        starGeo.setAttribute(
+          "position",
+          new THREE.Float32BufferAttribute(positions, 3)
+        );
+        starGeo.setAttribute(
+          "velocity",
+          new THREE.Float32BufferAttribute(velocities, 3)
+        );
+
+        let sprite = new THREE.TextureLoader().load("star.png");
+        let starMaterial = new THREE.PointsMaterial({
+          color: 0xaaaaaa,
+          size: 0.1,
+          map: sprite,
+        });
+
+        let stars = new THREE.Points(starGeo, starMaterial);
+        scene.add(stars);
+
+        let animate = () => {
+          requestAnimationFrame(animate);
+          for (let i = 0; i < 5000 * 3; i += 3) {
+            stars.geometry.attributes.position.array[i + 1] -=
+              stars.geometry.attributes.velocity.array[i + 1];
+
+            stars.geometry.attributes.velocity.array[i + 1] += 0.001;
+
+            if (stars.geometry.attributes.position.array[i + 1] < -200) {
+              stars.geometry.attributes.position.array[i + 1] = 200;
+              stars.geometry.attributes.velocity.array[i + 1] = 0;
+            }
+          }
+          stars.geometry.attributes.position.needsUpdate = true;
+          stars.rotation.y += 0.002;
+          renderer.render(scene, camera);
+        };
+
+        animate();
+      };
+
+      init();
+    }
+  }, [canvasRef]);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <>
+      <canvas ref={canvasRef} id="canvas" />
+    </>
+  );
 }
