@@ -57,7 +57,7 @@ export default function Home() {
           map: sprite,
         });
 
-        let stars = new THREE.Points(starGeo, starMaterial);
+        let stars = new THREE.Points(starGeo, starMaterial) as any;
 
         let animate = () => {
           for (let i = 0; i < NUMS; i += 2) {
