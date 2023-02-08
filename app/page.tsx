@@ -155,7 +155,7 @@ export default function Home() {
         whileTap={{ scale: 0.9 }}
       >
         <div
-          className="text-white mt-8 border-2 px-5 py-2 border-white rounded-lg cursor-pointer"
+          className="text-white mt-8 border-2 px-4 py-1 border-white rounded-lg cursor-pointer"
           onClick={() => {
             router.push("/main");
           }}
