@@ -32,7 +32,7 @@ export default function RootLayout({
         <title>JaeGwun.Kim</title>
       </head>
       <body className="bg-black">
-        <main className="font-yanolja">{children}</main>
+        <main className="font-yanolja text-[24px]">{children}</main>
       </body>
     </html>
   );

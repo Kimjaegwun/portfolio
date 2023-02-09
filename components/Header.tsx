@@ -14,12 +14,35 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
+const navigationList = [
+  {
+    id: 0,
+    name: "Main",
+    link: "/main",
+  },
+  {
+    id: 1,
+    name: "About",
+    link: "/about",
+  },
+  {
+    id: 2,
+    name: "Works",
+    link: "/works",
+  },
+  {
+    id: 3,
+    name: "Posts",
+    link: "/posts",
+  },
+];
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className="mb-5 relative flex">
+      <div className="relative flex mb-5">
         <motion.div
           whileHover={{
             rotate: 90,
@@ -35,7 +58,7 @@ const Header = () => {
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="w-[100px] border-2 border-white flex rounded-md items-center justify-center"
+            className="w-[110px] text-[20px] border-2 border-white flex rounded-md items-center justify-center"
           >
             Menu
             <motion.div
@@ -73,64 +96,24 @@ const Header = () => {
               },
             }}
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
-            className="bg-white text-black mt-2"
+            className="mt-2 text-black bg-white"
           >
-            <Link href={"/main"}>
-              <motion.li
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.3 },
-                  color: "black",
-                }}
-                whileTap={{ scale: 1 }}
-                variants={itemVariants}
-                className="w-[100px] flex justify-center py-2 font-semibold text-gray-400"
-              >
-                Main
-              </motion.li>
-            </Link>
-            <Link href={"/"}>
-              <motion.li
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.3 },
-                  color: "black",
-                }}
-                whileTap={{ scale: 1 }}
-                variants={itemVariants}
-                className="w-[100px] flex justify-center py-2 font-semibold text-gray-400"
-              >
-                About
-              </motion.li>
-            </Link>
-            <Link href={"/works"}>
-              <motion.li
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.3 },
-                  color: "black",
-                }}
-                whileTap={{ scale: 1 }}
-                variants={itemVariants}
-                className="w-[100px] flex justify-center py-2 font-semibold text-gray-400"
-              >
-                Works
-              </motion.li>
-            </Link>
-            <Link href={"/posts"}>
-              <motion.li
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.3 },
-                  color: "black",
-                }}
-                whileTap={{ scale: 1 }}
-                variants={itemVariants}
-                className="w-[100px] flex justify-center py-2 font-semibold text-gray-400"
-              >
-                Posts
-              </motion.li>
-            </Link>
+            {navigationList.map((item) => (
+              <Link href={item.link} key={item.id}>
+                <motion.li
+                  whileHover={{
+                    scale: 1.2,
+                    transition: { duration: 0.3 },
+                    color: "black",
+                  }}
+                  whileTap={{ scale: 1 }}
+                  variants={itemVariants}
+                  className="w-[110px] text-[20px] flex justify-center py-2 font-semibold text-gray-400"
+                >
+                  {item.name}
+                </motion.li>
+              </Link>
+            ))}
           </motion.ul>
         </motion.nav>
       </div>

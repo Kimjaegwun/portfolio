@@ -122,7 +122,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center">
+    <div className="flex flex-col items-center justify-center h-screen">
       <canvas
         ref={canvasRef}
         id="canvas"
@@ -140,7 +140,7 @@ export default function Home() {
             variants={variants}
             style={{
               color: "white",
-              fontSize: 24,
+              fontSize: 28,
             }}
           >
             {word === " " ? "\u00A0" : word}
@@ -155,7 +155,7 @@ export default function Home() {
         whileTap={{ scale: 0.9 }}
       >
         <div
-          className="text-white mt-8 border-2 px-4 py-1 border-white rounded-lg cursor-pointer"
+          className="px-4 py-1 mt-8 text-xl text-white border-2 border-white rounded-lg cursor-pointer"
           onClick={() => {
             router.push("/main");
           }}

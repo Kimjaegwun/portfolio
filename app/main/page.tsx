@@ -3,18 +3,46 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const career = [
+  {
+    id: 0,
+    year: 2011,
+    work: "성균관대학교 - 신소재공학부",
+  },
+  {
+    id: 1,
+    year: 2018,
+    work: "삼성전자 메모리사업부",
+  },
+  {
+    id: 2,
+    year: 2020,
+    work: "티어제이 - 모비",
+  },
+  {
+    id: 3,
+    year: 2021,
+    work: "티어제이 - 다독",
+  },
+  {
+    id: 4,
+    year: 2012,
+    work: "링글에듀케이션",
+  },
+];
+
 const Main = () => {
   return (
     <div className="container mx-auto pb-[100px]">
-      <div className="bg-zinc-800 rounded-md flex justify-center p-3">
-        <span className="font-bold">
+      <div className="flex justify-center p-3 rounded-md bg-zinc-800">
+        <span className="font-bold text-[22px]">
           안녕하세요! 저는 2년차 프론트엔드 엔지니어입니다. 반갑습니다~ 😆
         </span>
       </div>
       <div className="mt-[20px]">
-        <span className="text-[35px] font-bold">JaeGwun.kim</span>
+        <span className="text-[34px] font-bold">JaeGwun.kim</span>
       </div>
-      <span className="text-[15px] text-gray-400">
+      <span className="text-[20px] text-gray-300">
         [ 풀스택을 꿈꾸는 디발자 ]
       </span>
       <Image
@@ -32,7 +60,11 @@ const Main = () => {
         transition={{ duration: 0.8, delay: 0 }}
         className="mb-2"
       >
-        <div className="text-2xl border-b-2 border-gray-600 w-8 mb-2">소개</div>
+        <div className="mb-3">
+          <span className="text-[28px] border-b-2 border-gray-500 pb-1">
+            소개
+          </span>
+        </div>
         <span>
           &nbsp;안녕하세요. 풀스택 엔지니어를 꿈꾸는 김재권입니다. <br />
           &nbsp;2020년에 2년 넘게 근무하던 삼성전자를 나와 친구들과 스타트업을
@@ -47,37 +79,27 @@ const Main = () => {
           개발시 에 여러 팀들과 소통하기 위해 노력합니다.
         </span>
         <div className="flex justify-center mt-5">
-          <span className=" bg-red-500 rounded-lg px-3 py-1">
-            JaeGwun's Portfolio →
+          <span className="px-3 text-[22px] py-1 bg-red-500 rounded-lg">
+            JaeGwun{`'`}s Portfolio →
           </span>
         </div>
 
-        <div className="text-2xl border-b-2 border-gray-600 w-[88px] mb-2 mt-4">
-          학력 & 경력
+        <div className="mb-3">
+          <span className="text-[28px] border-b-2 border-gray-500 pb-1">
+            학력 & 경력
+          </span>
         </div>
-        <div>
-          <span className="font-bold text-lg w-[50px] inline-block">2011</span>
-          <span>성균관대학교 - 신소재공학부</span>
-        </div>
-        <div>
-          <span className="font-bold text-lg w-[50px] inline-block">2018</span>
-          <span>삼성전자 메모리사업부</span>
-        </div>
-        <div>
-          <span className="font-bold text-lg w-[50px] inline-block">2020</span>
-          <span>티어제이 - 모비</span>
-        </div>
-        <div>
-          <span className="font-bold text-lg w-[50px] inline-block">2021</span>
-          <span>티어제이 - 다독</span>
-        </div>
-        <div>
-          <span className="font-bold text-lg w-[50px] inline-block">2022</span>
-          <span>링글에듀케이션</span>
-        </div>
+        {career.map((item) => (
+          <div key={item.id} className="mt-1">
+            <span className="font-bold w-[60px] inline-block">{item.year}</span>
+            <span className="text-[22px]">{item.work}</span>
+          </div>
+        ))}
 
-        <div className="text-2xl border-b-2 border-gray-600 w-[81px] mb-2 mt-5">
-          좋아하는 것
+        <div className="mt-4 mb-3">
+          <span className="text-[28px] border-b-2 border-gray-500 pb-1">
+            좋아하는 것
+          </span>
         </div>
         <div>
           <span>
