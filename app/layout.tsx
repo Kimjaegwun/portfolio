@@ -1,4 +1,7 @@
+"use client";
+
 import localFont from "@next/font/local";
+import { AnimatePresence } from "framer-motion";
 import "./globals.css";
 
 const roboto = localFont({
@@ -32,7 +35,9 @@ export default function RootLayout({
         <title>JaeGwun.Kim</title>
       </head>
       <body className="bg-black">
-        <main className="font-yanolja text-[24px]">{children}</main>
+        <main className="font-yanolja text-[24px]">
+          <AnimatePresence initial={true}>{children}</AnimatePresence>
+        </main>
       </body>
     </html>
   );

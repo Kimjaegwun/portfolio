@@ -43,22 +43,18 @@ const Header = () => {
   return (
     <>
       <div className="relative flex mb-5">
-        <motion.div
-          whileHover={{
-            rotate: 90,
-          }}
-        >
-          <Image src={"/falling-star.png"} width={50} height={50} alt="star" />
-        </motion.div>
+        <Link href={"/main"}>
+          <Image src={"/sun.gif"} width={50} height={50} alt="star" />
+        </Link>
         <motion.nav
           initial={false}
           animate={isOpen ? "open" : "closed"}
-          className="absolute right-0 top-[10px]"
+          className="absolute right-0 top-[10px] z-50"
         >
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="w-[110px] text-[20px] border-2 border-white flex rounded-md items-center justify-center"
+            className="w-[110px] text-[18px] border-2 border-white flex rounded-md items-center justify-center"
           >
             Menu
             <motion.div
@@ -96,7 +92,7 @@ const Header = () => {
               },
             }}
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
-            className="mt-2 text-black bg-white"
+            className="mt-2 text-black bg-white border-2 border-gray-400 rounded-2xl"
           >
             {navigationList.map((item) => (
               <Link href={item.link} key={item.id}>
