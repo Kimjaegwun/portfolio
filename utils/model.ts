@@ -13,13 +13,13 @@ export const loadGLTFModel = (
     loader.load(
       glbPath,
       (gltf) => {
-        const getScene = gltf.scene;
-        getScene.name = "space";
-        getScene.receiveShadow = receiveShadow;
-        getScene.castShadow = castShadow;
-        scene.add(getScene);
-
-        resolve(getScene);
+        gltf.userData.color;
+        const model = gltf.scene;
+        model.name = "space";
+        model.receiveShadow = receiveShadow;
+        model.castShadow = castShadow;
+        scene.add(model);
+        resolve(model);
       },
       undefined,
       function (error) {
