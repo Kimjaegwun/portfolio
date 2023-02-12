@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex h-[50px] fixed justify-end px-[10px] w-full z-[999] bg-opacity-70 backdrop-blur-sm ">
+      <div className="flex h-[50px] fixed justify-end px-[50px] w-full z-[999] bg-opacity-70 backdrop-blur-sm">
         <motion.nav
           initial={false}
           animate={isOpen ? "open" : "closed"}
