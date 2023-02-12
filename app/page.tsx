@@ -130,7 +130,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col text-white items-center justify-center h-screen">
       <canvas
         ref={canvasRef}
         id="canvas"
@@ -143,15 +143,10 @@ export default function Home() {
         animate="visible"
       >
         {letters.map((word, index) => (
-          <motion.span
-            key={index}
-            variants={variants}
-            style={{
-              color: "white",
-              fontSize: 28,
-            }}
-          >
-            {word === " " ? "\u00A0" : word}
+          <motion.span key={index} variants={variants}>
+            <span className="text-[26px]">
+              {word === " " ? "\u00A0" : word}
+            </span>
           </motion.span>
         ))}
       </motion.div>
@@ -163,7 +158,7 @@ export default function Home() {
         whileTap={{ scale: 0.9 }}
       >
         <div
-          className="px-4 py-1 mt-8 text-[14px] text-white border-[1px] border-white rounded-lg cursor-pointer"
+          className="px-4 py-1 mt-8 border-[1px] border-white rounded-lg cursor-pointer"
           onClick={() => {
             router.push("/main");
           }}

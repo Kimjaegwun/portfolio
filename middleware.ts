@@ -9,7 +9,6 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
   const confirmedUrl = ["/", "/main", "/works", "/detail"];
 
   if (!confirmedUrl.includes(pathname) && !PUBLIC_FILE.test(pathname)) {
-    console.log({ pathname });
     const url = req.nextUrl.clone();
     url.pathname = "/";
     return NextResponse.redirect(`${url}`);
