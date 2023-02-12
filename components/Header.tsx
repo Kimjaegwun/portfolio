@@ -51,7 +51,7 @@ const Header = () => {
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="w-[90px] mt-3 text-[12px] font-bold py-1 text-white border-white flex rounded-md items-center justify-center"
+            className="w-[90px] mt-3 text-[14px] font-bold py-1 text-white border-white flex rounded-md items-center justify-center"
           >
             Menu
             <motion.div
@@ -105,7 +105,7 @@ const Header = () => {
                   }}
                   whileTap={{ scale: 1 }}
                   variants={itemVariants}
-                  className="w-[90px] text-[12px] flex justify-center py-2 font-semibold text-gray-400"
+                  className="w-[90px] text-[14px] flex justify-center py-2 font-semibold text-gray-400"
                 >
                   {item.name}
                 </motion.li>

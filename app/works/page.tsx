@@ -56,15 +56,15 @@ const Works = () => {
                     height="0"
                     sizes="100vw"
                     placeholder="blur"
-                    blurDataURL="/ringle.jpg"
+                    blurDataURL={item.image}
                     className="w-[100%] rounded-2xl h-auto object-cover hover:scale-105 duration-75"
                   />
                 </div>
               </Link>
-              <div className="mt-1 font-bold text-center mx-auto">
+              <div className="mt-2 font-bold text-center mx-auto">
                 {item.title}
               </div>
-              <div className="text-center text-[12px]">{item.content}</div>
+              <div className="text-center text-[14px]">{item.content}</div>
             </div>
           ))}
         </div>
