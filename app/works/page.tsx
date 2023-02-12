@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const works = [
   {
@@ -33,7 +34,7 @@ const works = [
 const Works = () => {
   return (
     <>
-      <div className="mb-5 text-[28px] font-bold">Works</div>
+      <div className="mb-5 text-[20px] font-bold">Works</div>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -46,22 +47,24 @@ const Works = () => {
               key={item.id}
               className="relative inline-block w-[100%] sm:w-[48%] mb-4"
             >
-              <div className="overflow-auto rounded-2xl bg-white">
-                <Image
-                  src={item.image}
-                  alt="ringle"
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  placeholder="blur"
-                  blurDataURL="/ringle.jpg"
-                  className="mx-auto w-[100%] rounded-xl h-auto"
-                />
-              </div>
-              <div className="mt-1 text-[26px] font-bold text-center">
+              <Link href={`/detail?id=${item.id}`}>
+                <div className="rounded-2xl max-w-[700px] bg-white overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt="ringle"
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    placeholder="blur"
+                    blurDataURL="/ringle.jpg"
+                    className="w-[100%] rounded-2xl h-auto object-cover hover:scale-105 duration-75"
+                  />
+                </div>
+              </Link>
+              <div className="mt-1 font-bold text-center mx-auto">
                 {item.title}
               </div>
-              <div className="text-[22px] text-center">{item.content}</div>
+              <div className="text-center text-[14px]">{item.content}</div>
             </div>
           ))}
         </div>

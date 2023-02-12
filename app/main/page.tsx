@@ -1,6 +1,5 @@
 "use client";
 
-import Model from "@/components/Model";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +27,7 @@ const career = [
   },
   {
     id: 4,
-    year: 2012,
+    year: "2022",
     work: "링글에듀케이션",
   },
 ];
@@ -36,27 +35,26 @@ const career = [
 const Main = () => {
   return (
     <div className="flex flex-col relative">
-      <Model />
       <div className="container mx-auto pb-[100px]">
-        <div className="flex justify-center p-3 rounded-md bg-zinc-800">
-          <span className="font-bold text-[22px]">
-            안녕하세요! 저는 2년차 프론트엔드 엔지니어입니다. 반갑습니다~ 😆
+        <div className="flex justify-center p-2 rounded-md bg-zinc-500">
+          <span className="font-bold">
+            안녕하세요! 저는 3년차 프론트엔드 엔지니어입니다. 😆
           </span>
         </div>
         <div className="mt-[20px]">
-          <span className="text-[34px] font-bold">JaeGwun.kim</span>
+          <span className="text-[20px] font-bold">JaeGwun.Kim</span>
         </div>
-        <span className="text-[20px] text-gray-300">
+        <span className="text-[12px] text-gray-300">
           [ 풀스택을 꿈꾸는 디발자 ]
         </span>
         <Image
-          src="/profile.jpg"
+          src="/profile.jpeg"
           width={100}
           height={100}
           alt="profile"
           placeholder="blur"
           blurDataURL="/profile.jpg"
-          className="mx-auto mt-5 rounded-[50px] border-2 border-white mb-5"
+          className="mx-auto mt-5 rounded-[50px] border-2 border-gray-700 mb-5"
         />
         <motion.div
           initial={{ y: 10, opacity: 0 }}
@@ -65,7 +63,7 @@ const Main = () => {
           className="mb-2"
         >
           <div className="mb-3">
-            <span className="text-[28px] border-b-2 border-gray-500 pb-1">
+            <span className="text-[18px] font-bold border-b-2 border-gray-500 pb-1">
               소개
             </span>
           </div>
@@ -84,14 +82,17 @@ const Main = () => {
           </span>
           <div className="flex justify-center mt-5">
             <Link href={"/works"}>
-              <span className="px-3 text-[22px] py-2 bg-red-500 rounded-lg">
-                JaeGwun{`'`}s Portfolio →
-              </span>
+              <button className="relative inline-flex items-center bg-zinc-400 rounded hover:bg-zinc-400 group px-3 py-2">
+                <span className="w-0 h-0 rounded bg-red-500 absolute top-0 left-0 ease-out duration-300 group-hover:w-full group-hover:h-full -z-1"></span>
+                <span className="w-full duration-250 ease-in-out z-10 text-[14px]">
+                  JaeGwun{`'`}s Portfolio →
+                </span>
+              </button>
             </Link>
           </div>
 
-          <div className="mb-3">
-            <span className="text-[28px] border-b-2 border-gray-500 pb-1">
+          <div className="mb-3 mt-5">
+            <span className="text-[18px] font-bold border-b-2 border-gray-500 pb-1">
               학력 & 경력
             </span>
           </div>
@@ -100,12 +101,12 @@ const Main = () => {
               <span className="font-bold w-[60px] inline-block">
                 {item.year}
               </span>
-              <span className="text-[22px]">{item.work}</span>
+              <span>{item.work}</span>
             </div>
           ))}
 
-          <div className="mt-4 mb-3">
-            <span className="text-[28px] border-b-2 border-gray-500 pb-1">
+          <div className="mt-5 mb-3">
+            <span className="text-[18px] font-bold border-b-2 border-gray-500 pb-1">
               좋아하는 것
             </span>
           </div>

@@ -1,9 +1,14 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
+
+const Model = dynamic(() => import("./Model"), {
+  ssr: false,
+  loading: () => <div className="h-full" />,
+});
 
 const itemVariants: Variants = {
   open: {
@@ -42,19 +47,16 @@ const Header = () => {
 
   return (
     <>
-      <div className="relative flex mb-5">
-        <Link href={"/main"}>
-          <Image src={"/sun.gif"} width={50} height={50} alt="star" />
-        </Link>
+      <div className="flex h-[50px] fixed justify-end px-[10px] w-full z-[999] bg-zinc-800 bg-opacity-70 backdrop-blur-sm ">
         <motion.nav
           initial={false}
           animate={isOpen ? "open" : "closed"}
-          className="absolute right-0 top-[10px] z-50"
+          className="z-50"
         >
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="w-[110px] text-[18px] border-2 border-white flex rounded-md items-center justify-center"
+            className="w-[110px] mt-3 text-[14px] font-bold py-1 text-white border-white flex rounded-md items-center justify-center"
           >
             Menu
             <motion.div
@@ -63,7 +65,7 @@ const Header = () => {
                 closed: { rotate: 0 },
               }}
               transition={{ duration: 0.2 }}
-              style={{ originY: 0.55, marginLeft: 20 }}
+              style={{ originY: 0.55, marginLeft: 20, marginTop: -4 }}
             >
               <svg width="15" height="15" viewBox="0 0 20 20">
                 <path d="M0 7 L 20 7 L 10 16" fill="white" />
@@ -92,7 +94,7 @@ const Header = () => {
               },
             }}
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
-            className="mt-2 text-black bg-white border-2 border-gray-400 rounded-2xl"
+            className="mt-2 text-black bg-white border-gray-400 rounded-2xl"
           >
             {navigationList.map((item) => (
               <Link href={item.link} key={item.id}>
@@ -104,7 +106,7 @@ const Header = () => {
                   }}
                   whileTap={{ scale: 1 }}
                   variants={itemVariants}
-                  className="w-[110px] text-[20px] flex justify-center py-2 font-semibold text-gray-400"
+                  className="w-[110px] text-[12px] flex justify-center py-2 font-semibold text-gray-400"
                 >
                   {item.name}
                 </motion.li>
@@ -112,6 +114,10 @@ const Header = () => {
             ))}
           </motion.ul>
         </motion.nav>
+      </div>
+      <div className="h-[60px]" />
+      <div className="h-[150px]">
+        <Model />
       </div>
     </>
   );
