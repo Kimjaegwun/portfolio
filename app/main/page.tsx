@@ -37,7 +37,7 @@ const Main = () => {
     <div className="flex flex-col relative">
       <div className="container mx-auto pb-[100px]">
         <div className="flex justify-center p-2 rounded-md bg-zinc-500">
-          <span className="font-bold">
+          <span className="font-bold text-[14px]">
             안녕하세요! 저는 3년차 프론트엔드 엔지니어입니다. 😆
           </span>
         </div>

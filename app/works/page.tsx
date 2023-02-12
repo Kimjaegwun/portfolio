@@ -34,7 +34,7 @@ const works = [
 const Works = () => {
   return (
     <>
-      <div className="mb-5 text-[20px] font-bold">Works</div>
+      <div className="mb-5 text-[18px] font-bold">Works</div>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -64,7 +64,7 @@ const Works = () => {
               <div className="mt-1 font-bold text-center mx-auto">
                 {item.title}
               </div>
-              <div className="text-center text-[14px]">{item.content}</div>
+              <div className="text-center text-[12px]">{item.content}</div>
             </div>
           ))}
         </div>

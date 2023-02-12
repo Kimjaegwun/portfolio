@@ -27,16 +27,11 @@ const navigationList = [
   },
   {
     id: 1,
-    name: "About",
-    link: "/about",
-  },
-  {
-    id: 2,
     name: "Works",
     link: "/works",
   },
   {
-    id: 3,
+    id: 2,
     name: "Posts",
     link: "/posts",
   },
@@ -47,7 +42,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex h-[50px] fixed justify-end px-[10px] w-full z-[999] bg-zinc-800 bg-opacity-70 backdrop-blur-sm ">
+      <div className="flex h-[50px] fixed justify-end px-[10px] w-full z-[999] bg-opacity-70 backdrop-blur-sm ">
         <motion.nav
           initial={false}
           animate={isOpen ? "open" : "closed"}
@@ -56,7 +51,7 @@ const Header = () => {
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="w-[110px] mt-3 text-[14px] font-bold py-1 text-white border-white flex rounded-md items-center justify-center"
+            className="w-[90px] mt-3 text-[12px] font-bold py-1 text-white border-white flex rounded-md items-center justify-center"
           >
             Menu
             <motion.div
@@ -65,9 +60,9 @@ const Header = () => {
                 closed: { rotate: 0 },
               }}
               transition={{ duration: 0.2 }}
-              style={{ originY: 0.55, marginLeft: 20, marginTop: -4 }}
+              style={{ originY: 0.55, marginLeft: 10, marginTop: -3 }}
             >
-              <svg width="15" height="15" viewBox="0 0 20 20">
+              <svg width="12" height="12" viewBox="0 0 20 20">
                 <path d="M0 7 L 20 7 L 10 16" fill="white" />
               </svg>
             </motion.div>
@@ -97,16 +92,20 @@ const Header = () => {
             className="mt-2 text-black bg-white border-gray-400 rounded-2xl"
           >
             {navigationList.map((item) => (
-              <Link href={item.link} key={item.id}>
+              <Link
+                href={item.link}
+                key={item.id}
+                onClick={() => setIsOpen(false)}
+              >
                 <motion.li
                   whileHover={{
-                    scale: 1.2,
+                    scale: 1.1,
                     transition: { duration: 0.3 },
                     color: "black",
                   }}
                   whileTap={{ scale: 1 }}
                   variants={itemVariants}
-                  className="w-[110px] text-[12px] flex justify-center py-2 font-semibold text-gray-400"
+                  className="w-[90px] text-[12px] flex justify-center py-2 font-semibold text-gray-400"
                 >
                   {item.name}
                 </motion.li>
