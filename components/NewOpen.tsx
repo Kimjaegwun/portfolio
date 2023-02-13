@@ -45,13 +45,13 @@ const NewOpen = () => {
           뉴오픈, 신규 오픈 가게 홍보 서비스
         </div>
         <Image
-          src={"/newopen-detail.png"}
+          src={"/newopen/newopen-detail.png"}
           alt="newopen"
           width="0"
           height="0"
           sizes="100vw"
           placeholder="blur"
-          blurDataURL={"/newopen-detail.png"}
+          blurDataURL={"/newopen/newopen-detail.png"}
           className="w-[80%] rounded-xl h-auto mx-auto"
         />
         <div className="my-2">웹 서비스 기획 및 구현</div>

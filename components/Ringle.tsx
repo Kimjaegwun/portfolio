@@ -47,7 +47,7 @@ const Ringle = () => {
         <div className="mb-2 text-orange-200">영어 점수 진단 프로젝트</div>
         <div className="grid grid-cols-4">
           <video controls>
-            <source src="/ringle-detail.mp4" type="video/mp4" />
+            <source src="/ringle/ringle-detail.mp4" type="video/mp4" />
           </video>
           <div className="col-span-3 ml-5">
             <div className="mb-2">
@@ -101,7 +101,7 @@ const Ringle = () => {
         <div className="mb-2 text-orange-200">Ringle Teens 런칭</div>
         <div className="grid grid-cols-4">
           <video controls>
-            <source src="/ringle-detail2.mp4" type="video/mp4" />
+            <source src="/ringle/ringle-detail2.mp4" type="video/mp4" />
           </video>
           <div className="col-span-3 ml-5">
             <div className="mb-2">틴즈 서비스 런칭</div>
@@ -129,14 +129,14 @@ const Ringle = () => {
       <div className="mt-5">
         <div className="mb-2 text-orange-200">App 최적화</div>
         <video controls className="w-[50%]">
-          <source src="/ringle-detail3.mp4" type="video/mp4" />
+          <source src="/ringle/ringle-detail3.mp4" type="video/mp4" />
         </video>
         <div className="my-2">
           - 앱 실행 시간 개선, hermes & bundle-splitter을 통해 번들 사이즈 및
           메모리 사용량 개선
         </div>
         <video controls className="w-[50%]">
-          <source src="/ringle-detail4.mp4" type="video/mp4" />
+          <source src="/ringle/ringle-detail4.mp4" type="video/mp4" />
         </video>
         <div className="mt-2">
           - react-query의 prefetch 활용하여 웨비나 탭 로딩 속도 개선

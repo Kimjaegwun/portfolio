@@ -34,7 +34,7 @@ const Daadok = () => {
       <div className="mt-5">
         <div className="mb-2 text-orange-200">다독, 정기 구독 서비스 런칭</div>
         <Image
-          src={"/daadok-detail.png"}
+          src={"/daadok/daadok-detail.png"}
           alt="daadok"
           width="0"
           height="0"
@@ -48,34 +48,34 @@ const Daadok = () => {
         </div>
         <div className="grid grid-cols-2">
           <Link
-            href={"/daadok-detail2.jpeg"}
+            href={"/daadok/daadok-detail2.jpeg"}
             target="_blank"
             className="cursor-zoom-in"
           >
             <Image
-              src={"/daadok-detail2.jpeg"}
+              src={"/daadok/daadok-detail2.jpeg"}
               alt="daadok"
               width="0"
               height="0"
               sizes="100vw"
               placeholder="blur"
-              blurDataURL={"/daadok-detail2.png"}
+              blurDataURL={"/daadok/daadok-detail2.png"}
               className="w-[95%] rounded-xl h-auto"
             />
           </Link>
           <Link
-            href={"/daadok-detail3.jpeg"}
+            href={"/daadok/daadok-detail3.jpeg"}
             target="_blank"
             className="cursor-zoom-in"
           >
             <Image
-              src={"/daadok-detail3.jpeg"}
+              src={"/daadok/daadok-detail3.jpeg"}
               alt="daadok"
               width="0"
               height="0"
               sizes="100vw"
               placeholder="blur"
-              blurDataURL={"/daadok-detail2.png"}
+              blurDataURL={"/daadok/daadok-detail2.png"}
               className="w-[100%] rounded-xl h-auto"
             />
           </Link>
@@ -95,13 +95,13 @@ const Daadok = () => {
           className="cursor-zoom-in"
         >
           <Image
-            src={"/daadok-detail4.png"}
+            src={"/daadok/daadok-detail4.png"}
             alt="daadok"
             width="0"
             height="0"
             sizes="100vw"
             placeholder="blur"
-            blurDataURL={"/daadok-detail4.png"}
+            blurDataURL={"/daadok/daadok-detail4.png"}
             className="w-[100%] rounded-xl h-auto my-2 mx-auto"
           />
         </Link>

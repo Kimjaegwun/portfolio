@@ -5,7 +5,42 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-const NUMS = 21000;
+const NUMS = 6000;
+
+const letters = Array.from("Hello, nice to meet you!");
+
+const variants = {
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: -20,
+    y: -20,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+};
+
+const container = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+  }),
+};
 
 export default function Home() {
   const router = useRouter();
@@ -93,41 +128,6 @@ export default function Home() {
       init();
     }
   }, [canvasRef]);
-
-  const letters = Array.from("Hello, nice to meet you!");
-
-  const container = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
-    }),
-  };
-
-  const variants = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      x: -20,
-      y: -20,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-  };
 
   return (
     <div className="flex flex-col text-white items-center justify-center h-screen">

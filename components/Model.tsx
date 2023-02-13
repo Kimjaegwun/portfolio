@@ -42,7 +42,7 @@ const Model = () => {
       controls.target = target;
       controls.enableZoom = false;
 
-      loadGLTFModel(scene, "/scene.gltf", {
+      loadGLTFModel(scene, "/3d/scene.gltf", {
         receiveShadow: true,
         castShadow: true,
       }).then(() => {
