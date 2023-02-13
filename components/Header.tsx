@@ -31,6 +31,7 @@ const navigationList = [
     id: 1,
     name: "Works",
     link: "/works",
+    sub: "/detail",
   },
   {
     id: 2,
@@ -49,7 +50,9 @@ const Header = () => {
 
   useEffect(() => {
     function setTabPosition() {
-      const find = navigationList.findIndex((item) => item.link === path);
+      const find = navigationList.findIndex(
+        (item) => item.link === path || item.sub === path
+      );
       const currentTab = tabsRef.current[find];
       setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
       setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
