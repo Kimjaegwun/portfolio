@@ -54,7 +54,7 @@ const Main = () => {
           alt="profile"
           placeholder="blur"
           blurDataURL="/profile.jpg"
-          className="mx-auto mt-5 rounded-[50px] border-2 border-gray-700 mb-5"
+          className="mx-auto mt-5 rounded-[50px] border-2 border-gray-500 mb-5"
         />
         <motion.div
           initial={{ y: 10, opacity: 0 }}

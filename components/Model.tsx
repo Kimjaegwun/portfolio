@@ -32,7 +32,7 @@ const Model = () => {
       renderer.outputEncoding = THREE.sRGBEncoding;
       refRenderer.current = renderer;
 
-      const camera = new THREE.PerspectiveCamera(30, scW / scH);
+      const camera = new THREE.PerspectiveCamera(15, scW / scH);
 
       const directionalLight = new THREE.DirectionalLight(0xcccccc, 0.5);
       scene.add(directionalLight);
@@ -41,7 +41,6 @@ const Model = () => {
       controls.autoRotate = true;
       controls.target = target;
       controls.enableZoom = false;
-      controls.maxDistance = 5;
 
       loadGLTFModel(scene, "/scene.gltf", {
         receiveShadow: true,
