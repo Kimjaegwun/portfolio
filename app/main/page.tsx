@@ -118,6 +118,30 @@ const Main = () => {
               <span className="text-orange-200">프라모델</span>, &nbsp;농구
             </span>
           </div>
+
+          <div className="mt-5 mb-3">
+            <span className="text-[18px] font-bold border-b-2 border-gray-500 pb-1">
+              Connect
+            </span>
+          </div>
+          <div className="flex items-center">
+            <Image
+              src={"/linkedin.webp"}
+              width="0"
+              height="0"
+              sizes="100vw"
+              alt="git"
+              className="relative w-[20px] h-[20px] bg-white rounded"
+            />
+            <Link
+              href={"https://www.linkedin.com/in/jaekwon-kim-2a9863205/"}
+              target="_blank"
+            >
+              <div className="ml-2 text-[#00a0dc] font-bold hover:underline">
+                LinkedIn
+              </div>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </div>
