@@ -77,7 +77,7 @@ const Header = () => {
               className="mr-5"
             />
           </Link>
-          <div className="relative flex">
+          <div className="relative flex items-center">
             {navigationList.map((item) => (
               <Link href={item.link} key={item.id}>
                 <motion.div
@@ -98,6 +98,23 @@ const Header = () => {
               className="absolute bottom-0 h-1 bg-teal-500 transition-all duration-300"
               style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
             />
+            <Link
+              href={"https://github.com/Kimjaegwun/portfolio"}
+              target="_blank"
+              className="flex"
+            >
+              <Image
+                src={"/git.png"}
+                width="0"
+                height="0"
+                sizes="100vw"
+                alt="git"
+                className="relative w-[20px] h-[20px]"
+              />
+              <span className="text-white text-sm ml-2 hover:underline">
+                Source
+              </span>
+            </Link>
           </div>
         </div>
       </div>

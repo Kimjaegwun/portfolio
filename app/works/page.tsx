@@ -58,7 +58,7 @@ const Works = () => {
                     sizes="100vw"
                     placeholder="blur"
                     blurDataURL={BLUR_URL}
-                    className="w-[100%] rounded-2xl h-auto hover:scale-125 duration-75"
+                    className="w-[100%] min-h-[135px] rounded-2xl h-auto hover:scale-125 duration-75"
                   />
                 </div>
               </Link>
