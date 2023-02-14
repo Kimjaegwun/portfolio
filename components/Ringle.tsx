@@ -51,11 +51,14 @@ const Ringle = () => {
           </video>
           <div className="col-span-3 ml-5">
             <div className="mb-2">
-              앱 내 Webview를 이용해서 데이터를 시각화하는 작업을 진행
+              음성 기반 데이터 정리 및 시각화(차트) 작업 진행, 앱 내 webview를
+              이용해 구현
             </div>
             <div className="text-gray-400 mb-1">[Work]</div>
-            <div>- SSG를 통해 CAF 홈 로딩 시간 개선</div>
-            <div>- Suspense 컴포넌트를 통한 Layout-Shift 개선</div>
+            <div>
+              - suspense를 이용해 렌더시의 layout-shift를 줄였고 prefetch을
+              사용하여 로딩시간을 10% 단축
+            </div>
             <span className="text-[10px] text-[#9ae6b4] bg-[#9ae6b429] px-1 rounded-sm mr-1">
               REF
             </span>
@@ -67,7 +70,7 @@ const Ringle = () => {
               toss tech
             </Link>
             <div>
-              - Nivo 라이브러리를 사용, 앱 호환성 및 자유도 높음
+              - nivo 라이브러리를 사용, 앱 호환성 및 자유도 높음
               <div>
                 <span className="text-[10px] text-[#9ae6b4] bg-[#9ae6b429] px-1 rounded-sm mr-1">
                   WEB
@@ -107,11 +110,13 @@ const Ringle = () => {
             <div className="mb-2">틴즈 서비스 런칭</div>
             <div className="text-gray-400 mb-1">[Work]</div>
             <div>
-              - 기존 Ringle 앱과 프로젝트 분리, 데이터 트래킹 및 앱 푸시 알림
-              개선
+              - 틴즈 컴포넌트 분리하여 새로운 프로젝트로 구성 » GA 세팅 / 푸시
+              알림 / 빌드 시간 개선
             </div>
-            <div>- RN 버전 업, 회원가입 프로세스 구축(소셜로그인/이메일)</div>
-            <div>- GA(Google Analytics) 세팅을 통한 유저 트래킹</div>
+            <div>
+              - RN 최신 버전 적용, 회원가입 프로세스 구축(이메일 / 소셜 로그인 -
+              페이스북, 카카오, 네이버, 구글, 애플)
+            </div>
             <div>- Fastlene을 통한 배포 자동화</div>
             <span className="text-[10px] text-[#9ae6b4] bg-[#9ae6b429] px-1 rounded-sm mr-1">
               REF
@@ -139,7 +144,7 @@ const Ringle = () => {
           <source src="/ringle/ringle-detail4.mp4" type="video/mp4" />
         </video>
         <div className="mt-2">
-          - react-query의 prefetch 활용하여 웨비나 탭 로딩 속도 개선
+          - prefetch를 통해 홈탭 이동 시 로딩시간 30~60% 감소
         </div>
       </div>
       <div className="h-[100px]" />

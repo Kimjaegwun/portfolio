@@ -43,11 +43,9 @@ const Moby = () => {
         />
         <div className="my-2">앱 서비스, 어드민 페이지 기획 및 구현</div>
         <div className="text-gray-400 mt-2">[Work]</div>
-        <div>
-          - React-Native 프레임워크를 이용하여 로그인, 호출 페이지 화면 구성
-        </div>
-        <div>- NodeJS, GraphQL 서버 환경 구축 및 Git 연동</div>
-        <div>- 가입시 작성한 데이터 기반 매칭 알고리즘 구현</div>
+        <div>- 홈 / 마이페이지 / 결제 수단 등록 화면 구성 및 API 연동</div>
+        <div>- 소셜 로그인 및 공유 기능 구현</div>
+        <div>- 유저 데이터 기반 매칭 알고리즘 구현</div>
         <div>- Apollo Subscription으로 실시간 택시 매칭 화면 구현</div>
         <Image
           src={"/moby/moby-detail2.webp"}

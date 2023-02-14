@@ -45,7 +45,7 @@ const Daadok = () => {
           className="w-[100%] rounded-xl h-auto mx-auto"
         />
         <div className="my-2">
-          웹/앱 서비스, 클라이언트/어드민 페이지 기획 및 구현
+          앱-웹 서비스 기획, 클라이언트-어드민 페이지 및 API 구현
         </div>
         <div className="grid grid-cols-2">
           <Link
@@ -83,8 +83,8 @@ const Daadok = () => {
         </div>
         <div className="text-gray-400 mt-2">[Work]</div>
         <div>
-          - Next.js / React-Native 프레임워크를 이용하여 로그인, 메인, 상품
-          페이지 등 전반적인 화면 구성 및 API 연동
+          - Next.js/React Native를 이용하여 로그인, 메인, 상품 페이지 등
+          전반적인 화면 구성 및 API 연동
         </div>
         <div>- NodeJS, GraphQL 서버 환경 구축 및 Git 연동</div>
         <div>- Jenkins, Docker 를 통한 배포 시스템 자동화</div>
