@@ -33,13 +33,12 @@ const Moby = () => {
         <div className="mb-2 text-orange-200">모비 런칭</div>
         <Image
           src={"/moby/moby-detail.webp"}
-          alt="moby"
-          width="0"
-          height="0"
-          sizes="100vw"
+          width={544}
+          height={301}
           placeholder="blur"
           blurDataURL={BLUR_URL}
-          className="w-[80%] rounded-xl h-auto mx-auto"
+          className="rounded-xl mx-auto"
+          alt="moby"
         />
         <div className="my-2">앱 서비스, 어드민 페이지 기획 및 구현</div>
         <div className="text-gray-400 mt-2">[Work]</div>
@@ -49,13 +48,12 @@ const Moby = () => {
         <div>- Apollo Subscription으로 실시간 택시 매칭 화면 구현</div>
         <Image
           src={"/moby/moby-detail2.webp"}
-          alt="moby"
-          width="0"
-          height="0"
-          sizes="100vw"
+          width={544}
+          height={362}
           placeholder="blur"
           blurDataURL={BLUR_URL}
-          className="w-[80%] rounded-xl h-auto my-2 mx-auto"
+          className="rounded-xl my-2 mx-auto"
+          alt="moby"
         />
         <div>- Tablet PC용 화면 구성</div>
         <div className="text-gray-400 my-2">[Result]</div>

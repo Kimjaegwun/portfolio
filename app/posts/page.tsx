@@ -64,13 +64,12 @@ const Posts = () => {
                 <Link href={item.link} target="_blank">
                   <Image
                     src={item.image}
-                    alt="ringle"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
+                    width={800}
+                    height={350}
                     placeholder="blur"
                     blurDataURL={BLUR_URL}
-                    className="w-[100%] max-h-[140px] rounded-2xl h-auto hover:scale-125 duration-75"
+                    className="rounded-2xl hover:scale-125 duration-75"
+                    alt="post"
                   />
                 </Link>
               </div>

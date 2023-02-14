@@ -36,13 +36,12 @@ const Daadok = () => {
         <div className="mb-2 text-orange-200">다독, 정기 구독 서비스 런칭</div>
         <Image
           src={"/daadok/daadok-detail.webp"}
-          alt="daadok"
-          width="0"
-          height="0"
-          sizes="100vw"
+          width={1252}
+          height={778}
           placeholder="blur"
           blurDataURL={BLUR_URL}
-          className="w-[100%] rounded-xl h-auto mx-auto"
+          className="rounded-xl"
+          alt="daadok"
         />
         <div className="my-2">
           앱-웹 서비스 기획, 클라이언트-어드민 페이지 및 API 구현
@@ -51,17 +50,16 @@ const Daadok = () => {
           <Link
             href={"/daadok/daadok-detail2.webp"}
             target="_blank"
-            className="cursor-zoom-in"
+            className="cursor-zoom-in mr-1"
           >
             <Image
               src={"/daadok/daadok-detail2.webp"}
-              alt="daadok"
-              width="0"
-              height="0"
-              sizes="100vw"
+              width={1440}
+              height={992}
               placeholder="blur"
               blurDataURL={BLUR_URL}
-              className="w-[95%] rounded-xl h-auto"
+              className="rounded-xl"
+              alt="daadok"
             />
           </Link>
           <Link
@@ -71,13 +69,12 @@ const Daadok = () => {
           >
             <Image
               src={"/daadok/daadok-detail3.webp"}
-              alt="daadok"
-              width="0"
-              height="0"
-              sizes="100vw"
+              width={1440}
+              height={739}
               placeholder="blur"
               blurDataURL={BLUR_URL}
-              className="w-[100%] rounded-xl h-auto"
+              className="rounded-xl"
+              alt="daadok"
             />
           </Link>
         </div>
@@ -97,13 +94,12 @@ const Daadok = () => {
         >
           <Image
             src={"/daadok/daadok-detail4.webp"}
-            alt="daadok"
-            width="0"
-            height="0"
-            sizes="100vw"
+            width={2278}
+            height={872}
             placeholder="blur"
             blurDataURL={BLUR_URL}
-            className="w-[100%] rounded-xl h-auto my-2 mx-auto"
+            className="rounded-xl my-2"
+            alt="daadok"
           />
         </Link>
         <div>- node-cron을 통한 정기배포 서비스 구축</div>
