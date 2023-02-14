@@ -1,5 +1,6 @@
 "use client";
 
+import { BLUR_URL } from "@/utils/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,12 +49,12 @@ const Main = () => {
           [ 풀스택을 꿈꾸는 디발자 ]
         </span>
         <Image
-          src="/profile.jpeg"
+          src="/profile.webp"
           width={100}
           height={100}
           alt="profile"
           placeholder="blur"
-          blurDataURL="/profile.jpg"
+          blurDataURL={BLUR_URL}
           className="mx-auto mt-5 rounded-[50px] border-2 border-gray-500 mb-5"
         />
         <motion.div

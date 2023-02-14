@@ -1,3 +1,4 @@
+import { BLUR_URL } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -45,13 +46,13 @@ const NewOpen = () => {
           뉴오픈, 신규 오픈 가게 홍보 서비스
         </div>
         <Image
-          src={"/newopen/newopen-detail.png"}
+          src={"/newopen/newopen-detail.webp"}
           alt="newopen"
           width="0"
           height="0"
           sizes="100vw"
           placeholder="blur"
-          blurDataURL={"/newopen/newopen-detail.png"}
+          blurDataURL={BLUR_URL}
           className="w-[80%] rounded-xl h-auto mx-auto"
         />
         <div className="my-2">웹 서비스 기획 및 구현</div>

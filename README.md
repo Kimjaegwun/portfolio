@@ -2,7 +2,7 @@
 
 ## Portfolio
 
-[![Image](/public/title.png)](https://portfolio-xi-ten-17.vercel.app/)
+[![Image](/public/title.webp)](https://portfolio-xi-ten-17.vercel.app/)
 
 개인 포트폴리오 프로젝트 입니다. 이력서, 블로그, github 프로젝트 등이 포함되어 있습니다.
 

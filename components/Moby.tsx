@@ -1,3 +1,4 @@
+import { BLUR_URL } from "@/utils/constants";
 import Image from "next/image";
 
 const Moby = () => {
@@ -31,13 +32,13 @@ const Moby = () => {
       <div className="mt-5">
         <div className="mb-2 text-orange-200">모비 런칭</div>
         <Image
-          src={"/moby/moby-detail.png"}
+          src={"/moby/moby-detail.webp"}
           alt="moby"
           width="0"
           height="0"
           sizes="100vw"
           placeholder="blur"
-          blurDataURL={"/moby/moby-detail.png"}
+          blurDataURL={BLUR_URL}
           className="w-[80%] rounded-xl h-auto mx-auto"
         />
         <div className="my-2">앱 서비스, 어드민 페이지 기획 및 구현</div>
@@ -49,13 +50,13 @@ const Moby = () => {
         <div>- 가입시 작성한 데이터 기반 매칭 알고리즘 구현</div>
         <div>- Apollo Subscription으로 실시간 택시 매칭 화면 구현</div>
         <Image
-          src={"/moby/moby-detail2.png"}
+          src={"/moby/moby-detail2.webp"}
           alt="moby"
           width="0"
           height="0"
           sizes="100vw"
           placeholder="blur"
-          blurDataURL={"/moby/moby-detail2.png"}
+          blurDataURL={BLUR_URL}
           className="w-[80%] rounded-xl h-auto my-2 mx-auto"
         />
         <div>- Tablet PC용 화면 구성</div>

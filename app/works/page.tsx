@@ -1,5 +1,6 @@
 "use client";
 
+import { BLUR_URL } from "@/utils/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,19 +14,19 @@ const works = [
   },
   {
     id: 1,
-    image: "/daadok/daadok.png",
+    image: "/daadok/daadok.webp",
     title: "다독",
     content: "다양한 식품들을 구독하여 정기배송 받는 플랫폼",
   },
   {
     id: 2,
-    image: "/moby/moby.png",
+    image: "/moby/moby.webp",
     title: "모비",
     content: "택시 기반 새로운 광고 솔루션",
   },
   {
     id: 3,
-    image: "/newopen/newopen.png",
+    image: "/newopen/newopen.webp",
     title: "뉴오픈",
     content: "새로 오픈한 가게들을 소개하고 안내해주는 플랫폼",
   },
@@ -56,7 +57,7 @@ const Works = () => {
                     height="0"
                     sizes="100vw"
                     placeholder="blur"
-                    blurDataURL={item.image}
+                    blurDataURL={BLUR_URL}
                     className="w-[100%] rounded-2xl h-auto hover:scale-125 duration-75"
                   />
                 </div>

@@ -85,7 +85,7 @@ export default function Home() {
           new THREE.Float32BufferAttribute(velocities, 3)
         );
 
-        let sprite = new THREE.TextureLoader().load("star.png");
+        let sprite = new THREE.TextureLoader().load("star.webp");
         let starMaterial = new THREE.PointsMaterial({
           color: "#ffffff",
           size: 0.1,

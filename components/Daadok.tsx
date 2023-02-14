@@ -1,3 +1,4 @@
+import { BLUR_URL } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,13 +35,13 @@ const Daadok = () => {
       <div className="mt-5">
         <div className="mb-2 text-orange-200">다독, 정기 구독 서비스 런칭</div>
         <Image
-          src={"/daadok/daadok-detail.png"}
+          src={"/daadok/daadok-detail.webp"}
           alt="daadok"
           width="0"
           height="0"
           sizes="100vw"
           placeholder="blur"
-          blurDataURL={"/daadok-detail.png"}
+          blurDataURL={BLUR_URL}
           className="w-[100%] rounded-xl h-auto mx-auto"
         />
         <div className="my-2">
@@ -48,34 +49,34 @@ const Daadok = () => {
         </div>
         <div className="grid grid-cols-2">
           <Link
-            href={"/daadok/daadok-detail2.jpeg"}
+            href={"/daadok/daadok-detail2.webp"}
             target="_blank"
             className="cursor-zoom-in"
           >
             <Image
-              src={"/daadok/daadok-detail2.jpeg"}
+              src={"/daadok/daadok-detail2.webp"}
               alt="daadok"
               width="0"
               height="0"
               sizes="100vw"
               placeholder="blur"
-              blurDataURL={"/daadok/daadok-detail2.png"}
+              blurDataURL={BLUR_URL}
               className="w-[95%] rounded-xl h-auto"
             />
           </Link>
           <Link
-            href={"/daadok/daadok-detail3.jpeg"}
+            href={"/daadok/daadok-detail3.webp"}
             target="_blank"
             className="cursor-zoom-in"
           >
             <Image
-              src={"/daadok/daadok-detail3.jpeg"}
+              src={"/daadok/daadok-detail3.webp"}
               alt="daadok"
               width="0"
               height="0"
               sizes="100vw"
               placeholder="blur"
-              blurDataURL={"/daadok/daadok-detail2.png"}
+              blurDataURL={BLUR_URL}
               className="w-[100%] rounded-xl h-auto"
             />
           </Link>
@@ -90,18 +91,18 @@ const Daadok = () => {
         <div>- CodePush 적용을 통한 실시간 트러블슈팅 작업 환경 구축</div>
         <div>- Figma을 이용한 디자이너와의 협업 및 Frontend 퍼블리싱</div>
         <Link
-          href={"/daadok-detail4.png"}
+          href={"/daadok-detail4.webp"}
           target="_blank"
           className="cursor-zoom-in"
         >
           <Image
-            src={"/daadok/daadok-detail4.png"}
+            src={"/daadok/daadok-detail4.webp"}
             alt="daadok"
             width="0"
             height="0"
             sizes="100vw"
             placeholder="blur"
-            blurDataURL={"/daadok/daadok-detail4.png"}
+            blurDataURL={BLUR_URL}
             className="w-[100%] rounded-xl h-auto my-2 mx-auto"
           />
         </Link>
