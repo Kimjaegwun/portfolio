@@ -47,8 +47,8 @@ const NewOpen = () => {
         </div>
         <Image
           src={"/newopen/newopen-detail.webp"}
-          width={544}
-          height={299}
+          width={3288}
+          height={1806}
           placeholder="blur"
           blurDataURL={BLUR_URL}
           className="rounded-xl my-1 mx-auto"

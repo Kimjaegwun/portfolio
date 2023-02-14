@@ -33,8 +33,8 @@ const Moby = () => {
         <div className="mb-2 text-orange-200">모비 런칭</div>
         <Image
           src={"/moby/moby-detail.webp"}
-          width={544}
-          height={301}
+          width={2032}
+          height={1126}
           placeholder="blur"
           blurDataURL={BLUR_URL}
           className="rounded-xl mx-auto"
@@ -48,8 +48,8 @@ const Moby = () => {
         <div>- Apollo Subscription으로 실시간 택시 매칭 화면 구현</div>
         <Image
           src={"/moby/moby-detail2.webp"}
-          width={544}
-          height={362}
+          width={1610}
+          height={1072}
           placeholder="blur"
           blurDataURL={BLUR_URL}
           className="rounded-xl my-2 mx-auto"
