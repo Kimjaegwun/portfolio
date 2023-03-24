@@ -1,7 +1,7 @@
 "use client";
 
 import { loadGLTFModel } from "@/utils/model";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -91,4 +91,4 @@ const Model = () => {
   return <canvas ref={refCanvas} className="h-[150px] mx-auto" />;
 };
 
-export default Model;
+export default React.memo(Model);
