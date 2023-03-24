@@ -1,5 +1,6 @@
 "use client";
 
+import { BLUR_URL } from "@/utils/constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -63,13 +64,12 @@ const Posts = () => {
                 <Link href={item.link} target="_blank">
                   <Image
                     src={item.image}
-                    alt="ringle"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
+                    width={800}
+                    height={350}
                     placeholder="blur"
-                    blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==" // 추가
-                    className="w-[100%] min-h-[135px] rounded-2xl h-auto hover:scale-125 duration-75"
+                    blurDataURL={BLUR_URL}
+                    className="rounded-2xl hover:scale-125 duration-75"
+                    alt="post"
                   />
                 </Link>
               </div>

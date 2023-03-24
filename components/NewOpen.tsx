@@ -47,13 +47,12 @@ const NewOpen = () => {
         </div>
         <Image
           src={"/newopen/newopen-detail.webp"}
-          alt="newopen"
-          width="0"
-          height="0"
-          sizes="100vw"
+          width={3288}
+          height={1806}
           placeholder="blur"
           blurDataURL={BLUR_URL}
-          className="w-[80%] rounded-xl h-auto mx-auto"
+          className="rounded-xl my-1 mx-auto"
+          alt="newopen"
         />
         <div className="my-2">웹 서비스 기획 및 구현</div>
         <div className="text-gray-400 mt-2">[Work]</div>

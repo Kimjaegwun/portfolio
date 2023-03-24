@@ -52,13 +52,12 @@ const Works = () => {
                 <div className="rounded-2xl max-w-[700px] bg-white overflow-hidden">
                   <Image
                     src={item.image}
-                    alt="ringle"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
+                    width={800}
+                    height={350}
                     placeholder="blur"
                     blurDataURL={BLUR_URL}
-                    className="w-[100%] min-h-[135px] rounded-2xl h-auto hover:scale-125 duration-75"
+                    className="rounded-2xl hover:scale-125 duration-75"
+                    alt="ringle"
                   />
                 </div>
               </Link>
