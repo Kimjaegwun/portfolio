@@ -1,16 +1,11 @@
 "use client";
 
+import Model from "@/components/Model";
 import { motion, Variants } from "framer-motion";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-
-const Model = dynamic(() => import("./Model"), {
-  ssr: false,
-  loading: () => <div className="h-full" />,
-});
 
 const itemVariants: Variants = {
   open: {
