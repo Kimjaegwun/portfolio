@@ -13,7 +13,9 @@ export default function SEO({
 }: Props) {
   return (
     <>
-      <title>{`${title} | 포트폴리오`}</title>
+      <head>
+        <title>{`${title} | 포트폴리오`}</title>
+      </head>
       <meta name="description" content={description} />
     </>
   );
