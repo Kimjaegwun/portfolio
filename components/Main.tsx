@@ -4,6 +4,7 @@ import { BLUR_URL } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const career = [
   {
@@ -34,8 +35,11 @@ const career = [
 ];
 
 const Main = () => {
+  const { push } = useRouter();
+
   return (
     <>
+      <div onClick={() => push("dynamic/detail/50")}>Dynamic route</div>
       <div className="flex flex-col relative">
         <div className="container mx-auto pb-[100px]">
           <div className="flex justify-center p-2 rounded-md bg-zinc-500">
