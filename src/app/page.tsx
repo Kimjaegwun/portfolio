@@ -1,9 +1,11 @@
 "use client";
 
+import * as THREE from "three";
+
+import { useEffect, useRef } from "react";
+
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
 
 const NUMS = 6000;
 

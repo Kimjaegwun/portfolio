@@ -1,11 +1,12 @@
 "use client";
 
-import Model from "@/components/Model";
-import { motion, Variants } from "framer-motion";
+import { Variants, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+import Model from "../components/Model";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
 
 const itemVariants: Variants = {
   open: {

@@ -1,25 +1,26 @@
 "use client";
 
-import Header from "@/components/Header";
-import localFont from "@next/font/local";
-import { AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
 import "./globals.css";
+
+import { AnimatePresence } from "framer-motion";
+import Header from "../components/Header";
+import localFont from "@next/font/local";
+import { usePathname } from "next/navigation";
 
 const roboto = localFont({
   src: [
     {
-      path: "../public/fonts/NIX_L.ttf",
+      path: "../../public/fonts/NIX_L.ttf",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../public/fonts/NIX_M.ttf",
+      path: "../../public/fonts/NIX_M.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/NIX_B.ttf",
+      path: "../../public/fonts/NIX_B.ttf",
       weight: "700",
       style: "normal",
     },

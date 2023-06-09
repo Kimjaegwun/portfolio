@@ -1,9 +1,11 @@
 "use client";
 
-import { loadGLTFModel } from "@/utils/model";
-import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
+
+import React, { useEffect, useRef } from "react";
+
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { loadGLTFModel } from "@/utils/model";
 
 function easeOutCirc(x: number) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
