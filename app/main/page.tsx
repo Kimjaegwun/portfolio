@@ -1,14 +1,14 @@
 import Main from "@/components/Main";
+import { Metadata } from "next";
 import React from "react";
-import SEO from "@/app/seo";
+
+export const metadata: Metadata = {
+  title: "메인 - 자기소개",
+  description: "jaegwun's profile",
+};
 
 const MainServerPage = () => {
-  return (
-    <>
-      <SEO title="메인 - 자기소개" description="jaegwun's profile" />
-      <Main />
-    </>
-  );
+  return <Main />;
 };
 
 export default MainServerPage;
