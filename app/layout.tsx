@@ -38,9 +38,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${roboto.variable}`}>
-      <head>
-        <title>JaeGwun.Kim</title>
-      </head>
+      <title>JaeGwun.Kim</title>
       <body className="bg-[#202023]">
         <main className="font-yanolja text-[16px]">
           {path !== "/" && <Header />}
