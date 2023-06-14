@@ -2,9 +2,9 @@
 
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import { AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
-import { Metadata } from "next";
 import localFont from "@next/font/local";
 import { usePathname } from "next/navigation";
 
@@ -45,6 +45,7 @@ export default function RootLayout({
         <main className="font-yanolja text-[16px]">
           {path !== "/" && <Header />}
           <AnimatePresence initial={true}>{children}</AnimatePresence>
+          <Analytics />
         </main>
       </body>
     </html>
