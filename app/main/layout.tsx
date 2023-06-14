@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "메인 - 자기소개",
+  description: "jaegwun's profile",
+};
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
