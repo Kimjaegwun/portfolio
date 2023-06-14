@@ -1,10 +1,12 @@
 "use client";
 
-import Header from "@/components/Header";
-import localFont from "@next/font/local";
-import { AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
 import "./globals.css";
+
+import { AnimatePresence } from "framer-motion";
+import Header from "@/components/Header";
+import { Metadata } from "next";
+import localFont from "@next/font/local";
+import { usePathname } from "next/navigation";
 
 const roboto = localFont({
   src: [
@@ -36,10 +38,6 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${roboto.variable}`}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head>
         <title>JaeGwun.Kim</title>
       </head>
