@@ -1,15 +1,10 @@
 import Link from "next/link";
 import Main from "@/components/Main";
 import React from "react";
-import SEO from "@/app/seo";
+import SEO from "../seo";
 
 const MainServerPage = () => {
-  return (
-    <>
-      <SEO title="메인 페이지" description="jaegwun's portfolio!" />
-      <Main />
-    </>
-  );
+  return <Main />;
 };
 
 export default MainServerPage;

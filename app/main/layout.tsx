@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import React from "react";
-import SEO from "@/app/seo";
+
+export const metadata: Metadata = {
+  title: "메인 - 자기소개",
+  description: "jaegwun's profile",
+  openGraph: {
+    title: "메인 - 자기소개",
+    description: "jaegwun's profile",
+    url: "https://www.kingjaegwun.dev/main",
+  },
+};
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
