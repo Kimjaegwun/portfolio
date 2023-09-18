@@ -1,10 +1,13 @@
 "use client";
 
+import "./globals.css";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import { AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import localFont from "@next/font/local";
-import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import "./globals.css";
 
 const roboto = localFont({
   src: [
@@ -27,6 +30,8 @@ const roboto = localFont({
   variable: "--font-yanolja",
 });
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
   children,
 }: {
@@ -36,17 +41,17 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${roboto.variable}`}>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head>
         <title>JaeGwun.Kim</title>
       </head>
       <body className="bg-[#202023]">
         <main className="font-yanolja text-[16px]">
           {path !== "/" && <Header />}
-          <AnimatePresence initial={true}>{children}</AnimatePresence>
+          <AnimatePresence initial={true}>
+            <QueryClientProvider client={queryClient}>
+              {children}
+            </QueryClientProvider>
+          </AnimatePresence>
         </main>
       </body>
     </html>

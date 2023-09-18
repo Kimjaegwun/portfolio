@@ -1,9 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
 import * as THREE from "three";
+
+import { useEffect, useRef } from "react";
+
+import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 
 const NUMS = 6000;
 
@@ -120,6 +123,26 @@ export default function Home() {
       init();
     }
   }, [canvasRef]);
+
+  const { data } = useQuery(
+    ["codenary"],
+    async () =>
+      await fetch(
+        "https://api.codenary.co.kr/discoverys/timeline?type=[video,text]"
+      )
+  );
+
+  console.log(data, "data");
+
+  const fetching = async () => {
+    const ddd = await fetch(
+      "https://api.codenary.co.kr/discoverys/timeline?type=[video,text]"
+    ).then((res) => res.json());
+
+    return ddd;
+  };
+
+  console.log(fetching().then((res) => console.log(res, "res")));
 
   return (
     <div className="flex flex-col text-white items-center justify-center h-screen">
