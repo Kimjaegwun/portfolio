@@ -26,7 +26,7 @@ const roboto = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "JaeGwun.Kim",
+  title: "JaeGwun.Kim!",
 };
 
 export default function RootLayout({
