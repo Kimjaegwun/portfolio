@@ -124,26 +124,6 @@ export default function Home() {
     }
   }, [canvasRef]);
 
-  const { data } = useQuery(
-    ["codenary"],
-    async () =>
-      await fetch(
-        "https://api.codenary.co.kr/discoverys/timeline?type=[video,text]"
-      )
-  );
-
-  console.log(data, "data");
-
-  const fetching = async () => {
-    const ddd = await fetch(
-      "https://api.codenary.co.kr/discoverys/timeline?type=[video,text]"
-    ).then((res) => res.json());
-
-    return ddd;
-  };
-
-  console.log(fetching().then((res) => console.log(res, "res")));
-
   return (
     <div className="flex flex-col text-white items-center justify-center h-screen">
       <canvas
